@@ -112,6 +112,7 @@ def render(values, updated, portrait):
     row('  Stars / forks: public, non-fork repositories.',
         '  <b>Stars / forks:</b> public, non-fork repositories.')
     field('Updated', updated + ' UTC')
+    row()
     left = portrait.splitlines()
     if len(left) != len(rows):
         raise ValueError(f'Expected {len(rows)} portrait lines, got {len(left)}')
