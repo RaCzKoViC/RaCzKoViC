@@ -4,6 +4,7 @@ import json
 import os
 import re
 import urllib.request
+import time
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
@@ -126,6 +127,21 @@ def main():
     username = os.environ.get('GITHUB_USERNAME', 'RaCzKoViC')
     if username != 'RaCzKoViC':
         raise ValueError('This profile belongs to RaCzKoViC')
+    event_path = os.environ.get('GITHUB_EVENT_PATH')
+    if os.environ.get('GITHUB_EVENT_NAME') == 'repository_dispatch' and event_path:
+        payload = json.loads(Path(event_path).read_text()).get('client_payload', {})
+        repository = payload.get('repository')
+        run_id = payload.get('run_id')
+        allowed = {'RaCzKoViC/' + name for name in ['RacOS', 'The-MinerGuy', 'Odysseus-Lab', 'AgentBox', 'CodeMap']}
+        if repository in allowed and isinstance(run_id, int) and run_id > 0:
+            # A reusable CI notification is sent just before its caller completes.
+            # Wait only for that event's run, never on a recurring schedule.
+            for attempt in range(60):
+                if api(f'/repos/{repository}/actions/runs/{run_id}')['status'] == 'completed':
+                    break
+                time.sleep(2)
+            else:
+                raise RuntimeError('The notifying CI run did not finish within two minutes')
     values = collect(username)
     path = ROOT / 'README.md'
     existing = path.read_text()
