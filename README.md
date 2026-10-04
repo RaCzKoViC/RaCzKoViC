@@ -35,7 +35,7 @@ I build and explore operating systems, agent tools and games with AI-assisted de
      ..,3M5AXXXXss3B#M2ssiiX5hMXs35A3A.             <b>Repositories:</b> ............................ <a href="https://github.com/RaCzKoViC?tab=repositories">Browse projects</a>
      ...5Gsssi;rrrAh#G5AriiX5HHXirrA5;.           
 ,:irsXss5&amp;X;i:irirXA5M5XiirXAX2rir;sr,.           <b>- GitHub Stats ---------------------------------------------</b>
-sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.              <b>Lines of Code on GitHub:</b> ............ 542,095 source lines
+sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.              <b>Lines of Code on GitHub:</b> ............ 542,107 source lines
 ,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Documentation:</b> .................................... 36,871
 i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Configuration:</b> .................................... 12,737
 5AihS#GH@&amp;BSHh2r::ir;sX;iii;ii;;2H2r. ,;Arrsi:      <b>Public repos:</b> .......................................... 6
@@ -43,10 +43,10 @@ i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Configuration:</b> ......
 25XAhhAr2hHGSSHh5Assrriii;irs2hH93.i5GGG3;: :;rX    <b>Followers:</b> ............................................. 3
 ssA555M5rs5hhMHHM3AsrrsssXXA5hHS9S,.;X52#HX .;sX    <b>Forks received:</b> ........................................ 4
 GH3AXXX3hAiX3h5AA335ArrrrsA5hMGS9#2. :;5GGG3,,;:    <b>Stars / forks:</b> public, non-fork repositories.
-223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-10-04 20:53 UTC
+223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-10-04 21:00 UTC
 5XrsA3MMAr5hXiX535:    ,,,::;rrssrr;:2M355AhGh,:  
 </pre>
-<!-- PROFILE:DATA {"configuration": 12737, "documentation": 36871, "followers": 3, "forks": 4, "lines": 542095, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_date": null, "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_date": "2026-09-27T13:06:18Z", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_date": null, "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-10-04T14:16:43Z", "ci": "Passed", "configuration": 2128, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_date": null, "release_url": null, "sha": "eb82712c8e959724027500cfb0d5451e43746a2c", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": null, "ci": null, "configuration": 168, "dependency_source": 0, "documentation": 71, "name": "RaCzKoViC", "project_source": 689, "release": "No release", "release_date": null, "release_url": null, "sha": null, "source": 689, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T20:50:28Z", "ci": "Failed", "configuration": 2947, "dependency_source": 0, "documentation": 5140, "name": "The-MinerGuy", "project_source": 45875, "release": "v1.28.1", "release_date": "2026-10-04T16:19:20Z", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1", "sha": "c544ad26494ce11b7c20a0cc3764e9496a04d0db", "source": 45875, "upstream_source": 0}], "repos": 6, "stars": 16} -->
+<!-- PROFILE:DATA {"configuration": 12737, "documentation": 36871, "followers": 3, "forks": 4, "lines": 542107, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_date": null, "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_date": "2026-09-27T13:06:18Z", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_date": null, "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-10-04T14:16:43Z", "ci": "Passed", "configuration": 2128, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_date": null, "release_url": null, "sha": "eb82712c8e959724027500cfb0d5451e43746a2c", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": null, "ci": null, "configuration": 168, "dependency_source": 0, "documentation": 71, "name": "RaCzKoViC", "project_source": 689, "release": "No release", "release_date": null, "release_url": null, "sha": null, "source": 689, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T21:00:16Z", "ci": "Running", "configuration": 2947, "dependency_source": 0, "documentation": 5140, "name": "The-MinerGuy", "project_source": 45887, "release": "v1.28.1", "release_date": "2026-10-04T16:19:20Z", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1", "sha": "c2455f7874671e9afafa62153a75427999f2a4b9", "source": 45887, "upstream_source": 0}], "repos": 6, "stars": 16} -->
 </details>
 <!-- PROFILE:END -->
 
@@ -74,7 +74,7 @@ _⛏️ Dig deep, build big, survive the guardians — a 2D pixel-art sandbox su
 
 Original C# / MonoGame game with deterministic worlds, mining and crafting, industrial automation, cooperative multiplayer and a dedicated server. The repository documents logic/integration tests and a real-window end-to-end self-test.
 
-**Status:** C# · Release [v1.28.1](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1) (2026-10-04) · CI: [Failed](https://github.com/RaCzKoViC/The-MinerGuy/actions) · [Website](https://raczkovic.github.io/The-MinerGuy/) · Last change [2026-10-04](https://github.com/RaCzKoViC/The-MinerGuy/commit/c544ad26494ce11b7c20a0cc3764e9496a04d0db)
+**Status:** C# · Release [v1.28.1](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1) (2026-10-04) · CI: [Running](https://github.com/RaCzKoViC/The-MinerGuy/actions) · [Website](https://raczkovic.github.io/The-MinerGuy/) · Last change [2026-10-04](https://github.com/RaCzKoViC/The-MinerGuy/commit/c2455f7874671e9afafa62153a75427999f2a4b9)
 
 **Topics:** `2d-game` `crafting-game` `csharp` `dotnet` `game` `gamedev` +8 more
 
@@ -178,10 +178,10 @@ No imported upstream baseline is configured. Project source is not a verified pe
 
 ### [The-MinerGuy](https://github.com/RaCzKoViC/The-MinerGuy)
 
-**CI:** [Failed](https://github.com/RaCzKoViC/The-MinerGuy/actions) · **Release:** [v1.28.1](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1)  
-**Last change:** [2026-10-04 20:50 UTC](https://github.com/RaCzKoViC/The-MinerGuy/commit/c544ad26494ce11b7c20a0cc3764e9496a04d0db)
+**CI:** [Running](https://github.com/RaCzKoViC/The-MinerGuy/actions) · **Release:** [v1.28.1](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1)  
+**Last change:** [2026-10-04 21:00 UTC](https://github.com/RaCzKoViC/The-MinerGuy/commit/c2455f7874671e9afafa62153a75427999f2a4b9)
 
-- Project source: **45,875** nonblank lines
+- Project source: **45,887** nonblank lines
 - Documentation: **5,140** · Configuration: **2,947**
 - Bundled / adapted third-party source: **0**
 
