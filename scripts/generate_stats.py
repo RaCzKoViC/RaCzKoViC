@@ -104,6 +104,8 @@ def render(values, updated, portrait):
     section('- GitHub Stats')
     field('Lines of Code on GitHub',
           f"{values['lines']:,} source lines")
+    field('Documentation', f"{values['documentation']:,}")
+    field('Configuration', f"{values['configuration']:,}")
     field('Public repos', f"{values['repos']:,}")
     field('Stars received', f"{values['stars']:,}")
     field('Followers', f"{values['followers']:,}")
@@ -111,8 +113,6 @@ def render(values, updated, portrait):
     row('  Stars / forks: public, non-fork repositories.',
         '  <b>Stars / forks:</b> public, non-fork repositories.')
     field('Updated', updated + ' UTC')
-    field('Documentation', f"{values['documentation']:,}")
-    field('Configuration', f"{values['configuration']:,}")
     left = portrait.splitlines()
     if len(left) != len(rows):
         raise ValueError(f'Expected {len(rows)} portrait lines, got {len(left)}')
