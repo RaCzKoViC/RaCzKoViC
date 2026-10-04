@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a self-contained SVG using public GitHub statistics."""
+"""Render the profile as real, selectable ASCII and live public statistics."""
 import json
 import os
 import re
@@ -7,73 +7,129 @@ import urllib.request
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
-from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
+LEFT_WIDTH = 44
+RIGHT_WIDTH = 64
+START = '<!-- PROFILE:START -->'
+END = '<!-- PROFILE:END -->'
 
 
 def api(path):
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "profile-telemetry"}
-    token = os.environ.get("GITHUB_TOKEN")
+    headers = {'Accept': 'application/vnd.github+json', 'User-Agent': 'profile-telemetry'}
+    token = os.environ.get('GITHUB_TOKEN')
     if token:
-        headers["Authorization"] = "Bearer " + token
-    request = urllib.request.Request("https://api.github.com" + path, headers=headers)
+        headers['Authorization'] = 'Bearer ' + token
+    request = urllib.request.Request('https://api.github.com' + path, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
         return json.load(response)
 
 
 def collect(username):
-    profile = api(f"/users/{username}")
-    repositories = []
+    user = api(f'/users/{username}')
+    repos = []
     page = 1
     while True:
-        batch = api(f"/users/{username}/repos?type=owner&per_page=100&page={page}")
-        repositories.extend(batch)
+        batch = api(f'/users/{username}/repos?type=owner&per_page=100&page={page}')
+        repos.extend(batch)
         if len(batch) < 100:
             break
         page += 1
-    originals = [repo for repo in repositories if not repo.get("fork")]
-    return [
-        ("Public repos", profile["public_repos"]),
-        ("Followers", profile["followers"]),
-        ("Stars received", sum(repo["stargazers_count"] for repo in originals)),
-        ("Forks received", sum(repo["forks_count"] for repo in originals)),
-    ]
+    originals = [r for r in repos if not r.get('fork')]
+    return {'repos': user['public_repos'], 'followers': user['followers'],
+            'stars': sum(r['stargazers_count'] for r in originals),
+            'forks': sum(r['forks_count'] for r in originals)}
 
 
-def render(values, updated):
-    rows = "\n".join(
-        f'<text x="24" y="{102 + index * 44}" fill="#c9d1d9">{escape(label)}</text>'
-        f'<text x="456" y="{102 + index * 44}" text-anchor="end" fill="#79c0ff">{value:,}</text>'
-        for index, (label, value) in enumerate(values)
-    )
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 318" width="480" height="318" role="img" aria-labelledby="title desc">
-<title id="title">Public GitHub activity</title>
-<desc id="desc">{escape('; '.join(f'{label}: {value}' for label, value in values))}. Updated {escape(updated)}.</desc>
-<rect x="1" y="1" width="478" height="316" rx="18" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-<g font-family="monospace" font-size="24">
-<text x="24" y="48" font-weight="bold" fill="#f2a65a">PUBLIC GITHUB</text>
-{rows}
-<text x="24" y="286" font-size="20" fill="#b1bac4">{escape(updated)} UTC</text>
-</g>
-</svg>
-'''
+def render(values, updated, portrait):
+    rows = []
+
+    def row(raw='', html=None):
+        if len(raw) > RIGHT_WIDTH:
+            raise ValueError(f'Profile row too wide: {raw}')
+        rows.append(escape(raw) if html is None else html)
+
+    def section(title):
+        raw = title + ' ' + '-' * (RIGHT_WIDTH - len(title) - 1)
+        row(raw, '<b>' + escape(raw) + '</b>')
+
+    def field(key, value, url=None):
+        dots = '.' * (RIGHT_WIDTH - len(key) - len(value) - 5)
+        if not dots:
+            raise ValueError(f'Profile field too wide: {key}')
+        raw = f'  {key}: {dots} {value}'
+        html = f'  <b>{escape(key)}:</b> {dots} '
+        html += (f'<a href="{escape(url, quote=True)}">{escape(value)}</a>'
+                 if url else escape(value))
+        row(raw, html)
+
+    section('RaCzKoViC@github')
+    field('OS', 'Windows 11 / Ubuntu / iOS')
+    field('Focus', 'Systems / AI agents / Games')
+    field('Editor', 'VS Code / Terminal')
+    field('Workflow', 'AI-assisted development')
+    row()
+    field('Languages', 'Rust / Python / TypeScript / C#')
+    field('Web', 'JavaScript / HTML / CSS')
+    field('AI tools', 'Claude Code / Codex / Kimi')
+    field('Local AI', 'Local LLMs / vLLM')
+    row()
+    field('Infra', 'Docker / PostgreSQL / Qdrant')
+    field('Messaging', 'Redis / NATS / MCP')
+    row()
+    section('- Projects')
+    for name, label in [('RacOS', 'Rust operating system'),
+                        ('Odysseus-Lab', 'AI / development laboratory'),
+                        ('AgentBox', 'Agent tools / environments'),
+                        ('CodeMap', 'Code exploration tools'),
+                        ('The-MinerGuy', 'Mining / crafting / exploration')]:
+        # Each project name is a real link inside the text terminal.
+        dots = '.' * (RIGHT_WIDTH - len(name) - len(label) - 5)
+        row(f'  {name}: {dots} {label}',
+            f'  <a href="https://github.com/RaCzKoViC/{name}">{name}</a>: {dots} {label}')
+    row()
+    section('- Contact')
+    field('GitHub', '@RaCzKoViC', 'https://github.com/RaCzKoViC')
+    field('Repositories', 'Browse projects', 'https://github.com/RaCzKoViC?tab=repositories')
+    row()
+    row()
+    section('- GitHub Stats')
+    field('Public repos', f"{values['repos']:,}")
+    field('Stars received', f"{values['stars']:,}")
+    field('Followers', f"{values['followers']:,}")
+    field('Forks received', f"{values['forks']:,}")
+    row('  Stars / forks: public, non-fork repositories.')
+    row()
+    field('Updated', updated + ' UTC')
+    row('  Refresh: every 6 hours via GitHub Actions.')
+    row()
+    left = portrait.splitlines()
+    if len(left) != len(rows):
+        raise ValueError(f'Expected {len(rows)} portrait lines, got {len(left)}')
+    if any(len(line) > LEFT_WIDTH for line in left):
+        raise ValueError('Portrait exceeds its column width')
+    lines = [escape(line.ljust(LEFT_WIDTH)) + '   ' + right for line, right in zip(left, rows)]
+    return START + '\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n' + END
 
 
 def main():
-    username = os.environ.get("GITHUB_USERNAME", "RaCzKoViC")
-    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]{0,38}", username):
-        raise ValueError("Invalid GitHub username")
+    username = os.environ.get('GITHUB_USERNAME', 'RaCzKoViC')
+    if username != 'RaCzKoViC':
+        raise ValueError('This profile belongs to RaCzKoViC')
     values = collect(username)
-    updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
-    svg = render(values, updated)
-    ElementTree.fromstring(svg)
-    target = ROOT / "assets/github-stats.svg"
-    temporary = target.with_suffix(".svg.tmp")
-    temporary.write_text(svg, encoding="utf-8")
-    temporary.replace(target)
-    print(dict(values))
+    updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')
+    block = render(values, updated, (ROOT / 'assets/portrait.txt').read_text())
+    path = ROOT / 'README.md'
+    existing = path.read_text()
+    pattern = re.compile(re.escape(START) + r'.*?' + re.escape(END), re.S)
+    if len(pattern.findall(existing)) != 1:
+        raise ValueError('Expected exactly one generated profile block')
+    result = pattern.sub(lambda _: block, existing)
+    temporary = path.with_suffix('.md.tmp')
+    temporary.write_text(result, encoding='utf-8')
+    temporary.replace(path)
+    print(values)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
