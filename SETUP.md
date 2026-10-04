@@ -6,7 +6,7 @@ The profile uses real selectable ASCII text. The portrait is 48 columns wide; th
 
 The profile refreshes on a default-branch push, manual workflow run, or `repository_dispatch` (`project_changed` / legacy `code_changed`). There is no scheduled polling.
 
-Each existing project has `.github/workflows/notify-profile.yml`, also available as [a template](integrations/notify-profile.yml). It notifies the profile on main pushes, published/edited/deleted releases and CI runs starting/completing on main. It does not check out or execute project code, consume artifacts or caches. Its own runs and fork-origin runs are excluded. Future repositories need this workflow plus the secret below; discovery of new repositories requires a profile event.
+RacOS, The-MinerGuy, AgentBox and CodeMap have `.github/workflows/notify-profile.yml`, also available as [a template](integrations/notify-profile.yml). Odysseus-Lab requires merging [PR #44](https://github.com/RaCzKoViC/Odysseus-Lab/pull/44) through its protected branch and required checks. It notifies the profile on main pushes, published/edited/deleted releases and CI runs starting/completing on main. It does not check out or execute project code, consume artifacts or caches. Its own runs and fork-origin runs are excluded. Future repositories need this workflow plus the secret below; discovery of new repositories requires a profile event.
 
 ### Required activation
 
