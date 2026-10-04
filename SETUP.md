@@ -9,3 +9,5 @@ The workflow refreshes README.md every six hours, on generator or portrait chang
 ## Lines of Code on GitHub
 
 The counter sums GitHub code_frequency data over public, owned, non-fork repositories. Display: net tracked lines (cumulative additions++, cumulative deletions--). Net = additions - deletions. These are tracked text lines, including documentation and configuration, not source-only lines or a measure of individual authorship. GitHub ignores merge commits in repository statistics. The code-frequency endpoint can temporarily return 202 while calculating, and has a 10,000-commit repository limit. The generator retries pending results and leaves README unchanged on errors rather than inventing numbers.
+
+The profile repository uses git log --no-merges --numstat over full default-branch history to avoid invalidating its own API statistics after each refresh. Binary changes are ignored, matching text-line counts. Other repositories use GitHub code_frequency.

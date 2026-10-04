@@ -5,6 +5,7 @@ import os
 import re
 import urllib.request
 import time
+import subprocess
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from html import escape
@@ -33,8 +34,23 @@ class StatisticsPending(RuntimeError):
     pass
 
 
+def count_numstat(history):
+    added = deleted = 0
+    for line in history.splitlines():
+        columns = line.split('\t', 2)
+        if len(columns) == 3 and columns[0].isdigit() and columns[1].isdigit():
+            added += int(columns[0])
+            deleted += int(columns[1])
+    return added, deleted
+
+
 def code_frequency(repo):
     """GitHub counts tracked text changes; this is not a source-only parser."""
+    if repo['full_name'] == 'RaCzKoViC/RaCzKoViC' and (ROOT / '.git').exists():
+        history = subprocess.run(
+            ['git', '-C', str(ROOT), 'log', '--no-merges', '--format=', '--numstat', 'HEAD'],
+            check=True, capture_output=True, text=True).stdout
+        return count_numstat(history)
     path = '/repos/' + repo['full_name'] + '/stats/code_frequency'
     for attempt in range(10):
         try:
