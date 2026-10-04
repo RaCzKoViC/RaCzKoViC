@@ -33,8 +33,7 @@ I build and explore operating systems, agent tools and games with AI-assisted de
     ...;###HHGSSHsi;XA225222Xsrr5HMHH#M,          <b>- Contact --------------------------------------------------</b>
     ...:GHG523MH5is5MHHMM3hh5X;,rSGhhH:             <b>GitHub:</b> ....................................... <a href="https://github.com/RaCzKoViC">@RaCzKoViC</a>
      ..,3M5AXXXXss3B#M2ssiiX5hMXs35A3A.             <b>Repositories:</b> ............................ <a href="https://github.com/RaCzKoViC?tab=repositories">Browse projects</a>
-     ...5Gsssi;rrrAh#G5AriiX5HHXirrA5;.             <b>Email.Personal:</b> .................... <a href="mailto:raczimaczi@icloud.com">raczimaczi@icloud.com</a>
-,:irsXss5&amp;X;i:irirXA5M5XiirXAX2rir;sr,.           
+     ...5Gsssi;rrrAh#G5AriiX5HHXirrA5;.             ,:irsXss5&amp;X;i:irirXA5M5XiirXAX2rir;sr,.           
 sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.            <b>- GitHub Stats ---------------------------------------------</b>
 ,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Lines of Code on GitHub:</b> ............ 537,681 source lines
 i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Documentation:</b> .................................... 32,231
