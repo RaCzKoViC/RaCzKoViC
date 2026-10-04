@@ -2,7 +2,7 @@
 
 I build and explore operating systems, agent tools and games with AI-assisted development. Start with the projects below: what they do, what I maintain and how to run them.
 
-[Portfolio](#featured-portfolio) · [Project status & code origin](#project-telemetry) · [Email](mailto:raczimaczi@icloud.com)
+[Portfolio](#featured-portfolio) · [Project status & code origin](#project-telemetry)
 
 <!-- PROFILE:START -->
 <details open>
