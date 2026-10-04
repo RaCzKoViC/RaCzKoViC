@@ -40,6 +40,12 @@ def snapshot(repo, api):
         if not kind or dependency(repo['name'], path) or (repo['name'] == 'RaCzKoViC' and path == 'README.md'): continue
         totals[kind] += sum(bool(line.strip()) for line in text.splitlines())
     assert totals['source'] == origins['project_source'] + origins['upstream_source']
+    if repo['name'] == 'RaCzKoViC':
+        # The profile's own HEAD is usually the previous refresh commit. Recording
+        # its SHA, date or CI state would make every run differ from the last one
+        # and commit again; only its file counts are published.
+        return dict(name=repo['name'], sha=None, changed=None, ci=None, release='No release',
+                    release_url=None, release_date=None, **totals, **origins)
     runs = []
     page = 1
     while True:

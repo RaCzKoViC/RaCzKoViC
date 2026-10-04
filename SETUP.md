@@ -41,7 +41,7 @@ Classification is exclusive and deterministic; extension rules take precedence o
 
 ## Project status
 
-Last change is the default branch HEAD commit's committer date (UTC), linked to that SHA. CI uses the latest run of every workflow on that exact SHA and branch, excluding notification workflows. A running check takes precedence; completed failure, cancellation and neutral/no-CI results are distinct. It is GitHub Actions status, not external CI. Releases use the latest published stable GitHub release; no release is shown honestly, without inferring versions from package files.
+Last change is the default branch HEAD commit's committer date (UTC), linked to that SHA. CI uses the latest run of every workflow on that exact SHA and branch, excluding notification workflows. A running check takes precedence; completed failure, cancellation and neutral/no-CI results are distinct. It is GitHub Actions status, not external CI. The profile repository itself publishes only file counts: its HEAD is normally the previous refresh commit, so recording its SHA, date or CI state would make every run commit again. Releases use the latest published stable GitHub release; no release is shown honestly, without inferring versions from package files.
 
 ## Validation
 

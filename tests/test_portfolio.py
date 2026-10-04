@@ -159,3 +159,21 @@ class ReadmeUpdateTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ProfileSelfSnapshotTests(unittest.TestCase):
+    def test_profile_repository_snapshot_ignores_its_own_head(self):
+        from unittest.mock import patch
+        import project_telemetry
+
+        def api(path):
+            if '/commits/' in path:
+                return {'sha': 'b' * 40, 'commit': {'committer': {'date': '2026-10-04T19:41:04Z'}}}
+            raise AssertionError('no run or release lookups for the profile itself: ' + path)
+
+        repo = {'name': 'RaCzKoViC', 'full_name': 'RaCzKoViC/RaCzKoViC', 'default_branch': 'main'}
+        with patch('project_telemetry.archive_files', return_value={'README.md': 'x\n', 'a.py': 'y\n'}):
+            snap = project_telemetry.snapshot(repo, api)
+        self.assertEqual((snap['sha'], snap['changed'], snap['ci']), (None, None, None))
+        self.assertEqual(snap['source'], 1)
+        self.assertEqual(snap['documentation'], 0)
