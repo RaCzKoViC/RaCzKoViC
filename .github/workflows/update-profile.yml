@@ -1,13 +1,11 @@
 name: Update profile telemetry
 on:
   push:
-    paths:
-      - scripts/generate_stats.py
-      - assets/portrait.txt
-      - .github/workflows/update-profile.yml
+  repository_dispatch:
+    types: [code_changed]
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "2-57/5 * * * *"
 permissions:
   contents: write
 concurrency:

@@ -48,7 +48,9 @@ def code_frequency(repo):
     """GitHub counts tracked text changes; this is not a source-only parser."""
     if repo['full_name'] == 'RaCzKoViC/RaCzKoViC' and (ROOT / '.git').exists():
         history = subprocess.run(
-            ['git', '-C', str(ROOT), 'log', '--no-merges', '--format=', '--numstat', 'HEAD'],
+            ['git', '-C', str(ROOT), 'log', '--no-merges', '--invert-grep',
+             '--grep=^chore(profile): refresh public statistics$',
+             '--format=', '--numstat', 'HEAD'],
             check=True, capture_output=True, text=True).stdout
         return count_numstat(history)
     path = '/repos/' + repo['full_name'] + '/stats/code_frequency'
@@ -144,16 +146,16 @@ def render(values, updated, portrait):
     field('Email.Personal', 'raczimaczi@icloud.com', 'mailto:raczimaczi@icloud.com')
     row()
     section('- GitHub Stats')
+    field('Lines of Code on GitHub',
+          f"{values['lines']:,} ({values['added']:,}++, {values['deleted']:,}--)")
     field('Public repos', f"{values['repos']:,}")
     field('Stars received', f"{values['stars']:,}")
     field('Followers', f"{values['followers']:,}")
     field('Forks received', f"{values['forks']:,}")
     row('  Stars / forks: public, non-fork repositories.',
         '  <b>Stars / forks:</b> public, non-fork repositories.')
-    field('Lines of Code on GitHub',
-          f"{values['lines']:,} ({values['added']:,}++, {values['deleted']:,}--)")
     field('Updated', updated + ' UTC')
-    row('  Refresh: every 6 hours via GitHub Actions.')
+    row('  Refresh: on profile push / check every 5 minutes.')
     row('  Lines: additions minus deletions; tracked text.')
     left = portrait.splitlines()
     if len(left) != len(rows):
@@ -161,7 +163,8 @@ def render(values, updated, portrait):
     if any(len(line) > LEFT_WIDTH for line in left):
         raise ValueError('Portrait exceeds its column width')
     lines = [escape(line.ljust(LEFT_WIDTH)) + '   ' + right for line, right in zip(left, rows)]
-    return START + '\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n' + END
+    return (START + '\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n'
+            + '<!-- PROFILE:DATA ' + json.dumps(values, sort_keys=True) + ' -->\n' + END)
 
 
 def main():
@@ -169,10 +172,14 @@ def main():
     if username != 'RaCzKoViC':
         raise ValueError('This profile belongs to RaCzKoViC')
     values = collect(username)
-    updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')
-    block = render(values, updated, (ROOT / 'assets/portrait.txt').read_text())
     path = ROOT / 'README.md'
     existing = path.read_text()
+    previous = re.search(r'<!-- PROFILE:DATA (.*?) -->', existing)
+    if previous and json.loads(previous.group(1)) == values:
+        print('No statistics changed; README remains unchanged.')
+        return
+    updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')
+    block = render(values, updated, (ROOT / 'assets/portrait.txt').read_text())
     pattern = re.compile(re.escape(START) + r'.*?' + re.escape(END), re.S)
     if len(pattern.findall(existing)) != 1:
         raise ValueError('Expected exactly one generated profile block')
