@@ -4,6 +4,8 @@ import json
 import os
 import re
 import urllib.request
+import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
@@ -22,7 +24,34 @@ def api(path):
         headers['Authorization'] = 'Bearer ' + token
     request = urllib.request.Request('https://api.github.com' + path, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
+        if response.status == 202:
+            raise StatisticsPending(path)
         return json.load(response)
+
+
+class StatisticsPending(RuntimeError):
+    pass
+
+
+def code_frequency(repo):
+    """GitHub counts tracked text changes; this is not a source-only parser."""
+    path = '/repos/' + repo['full_name'] + '/stats/code_frequency'
+    for attempt in range(10):
+        try:
+            weeks = api(path)
+            if not isinstance(weeks, list):
+                raise ValueError('Unexpected code-frequency response')
+            if any(len(week) != 3 for week in weeks):
+                raise ValueError('Invalid code-frequency row')
+            added = sum(week[1] for week in weeks)
+            deleted = -sum(week[2] for week in weeks)
+            if weeks and added == 0 and deleted == 0:
+                raise ValueError('GitHub returned empty line counts for a nonempty repository')
+            return added, deleted
+        except StatisticsPending:
+            if attempt == 9:
+                raise
+            time.sleep(10)
 
 
 def collect(username):
@@ -36,7 +65,12 @@ def collect(username):
             break
         page += 1
     originals = [r for r in repos if not r.get('fork')]
-    return {'repos': user['public_repos'], 'followers': user['followers'],
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        counts = list(pool.map(code_frequency, originals))
+    added = sum(pair[0] for pair in counts)
+    deleted = sum(pair[1] for pair in counts)
+    return {'lines': added - deleted, 'added': added, 'deleted': deleted,
+            'repos': user['public_repos'], 'followers': user['followers'],
             'stars': sum(r['stargazers_count'] for r in originals),
             'forks': sum(r['forks_count'] for r in originals)}
 
@@ -91,18 +125,20 @@ def render(values, updated, portrait):
     section('- Contact')
     field('GitHub', '@RaCzKoViC', 'https://github.com/RaCzKoViC')
     field('Repositories', 'Browse projects', 'https://github.com/RaCzKoViC?tab=repositories')
-    row()
+    field('Email.Personal', 'raczimaczi@icloud.com', 'mailto:raczimaczi@icloud.com')
     row()
     section('- GitHub Stats')
     field('Public repos', f"{values['repos']:,}")
     field('Stars received', f"{values['stars']:,}")
     field('Followers', f"{values['followers']:,}")
     field('Forks received', f"{values['forks']:,}")
-    row('  Stars / forks: public, non-fork repositories.')
-    row()
+    row('  Stars / forks: public, non-fork repositories.',
+        '  <b>Stars / forks:</b> public, non-fork repositories.')
+    field('Lines of Code on GitHub',
+          f"{values['lines']:,} ({values['added']:,}++, {values['deleted']:,}--)")
     field('Updated', updated + ' UTC')
     row('  Refresh: every 6 hours via GitHub Actions.')
-    row()
+    row('  Lines: additions minus deletions; tracked text.')
     left = portrait.splitlines()
     if len(left) != len(rows):
         raise ValueError(f'Expected {len(rows)} portrait lines, got {len(left)}')

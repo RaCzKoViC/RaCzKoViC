@@ -5,3 +5,7 @@ The profile is real selectable text inside a native GitHub HTML preformatted blo
 GitHub controls the font, colors, background and code-block scrolling. Custom CSS and arbitrary text colors are not available in a profile README. The desktop layout preserves both columns; phones scroll this single text block horizontally rather than shrinking characters or stacking columns.
 
 The workflow refreshes README.md every six hours, on generator or portrait changes, and via workflow_dispatch. It uses the built-in GITHUB_TOKEN with contents: write. Stats are public data; stars and forks exclude forked repositories. API errors preserve the last successful README. Generated markers protect other text outside the terminal block.
+
+## Lines of Code on GitHub
+
+The counter sums GitHub code_frequency data over public, owned, non-fork repositories. Display: net tracked lines (cumulative additions++, cumulative deletions--). Net = additions - deletions. These are tracked text lines, including documentation and configuration, not source-only lines or a measure of individual authorship. GitHub ignores merge commits in repository statistics. The code-frequency endpoint can temporarily return 202 while calculating, and has a 10,000-commit repository limit. The generator retries pending results and leaves README unchanged on errors rather than inventing numbers.
