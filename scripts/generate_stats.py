@@ -99,7 +99,7 @@ def render(values, updated, portrait):
     section('- Contact')
     field('GitHub', '@RaCzKoViC', 'https://github.com/RaCzKoViC')
     field('Repositories', 'Browse projects', 'https://github.com/RaCzKoViC?tab=repositories')
-        row()
+    row()
     section('- GitHub Stats')
     field('Lines of Code on GitHub',
           f"{values['lines']:,} source lines")
