@@ -119,8 +119,8 @@ def render(values, updated, portrait):
     if any(len(line) > LEFT_WIDTH for line in left):
         raise ValueError('Portrait exceeds its column width')
     lines = [escape(line.ljust(LEFT_WIDTH)) + '  ' + right for line, right in zip(left, rows)]
-    return (START + '\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n'
-            + markdown(values['projects']) + '<!-- PROFILE:DATA ' + json.dumps(values, sort_keys=True) + ' -->\n' + END)
+    return (START + '\n<details open>\n<summary>ASCII terminal · collapse to read the portfolio</summary>\n\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n'
+            + '<!-- PROFILE:DATA ' + json.dumps(values, sort_keys=True) + ' -->\n</details>\n' + END)
 
 
 def main():
@@ -155,6 +155,11 @@ def main():
     if len(pattern.findall(existing)) != 1:
         raise ValueError('Expected exactly one generated profile block')
     result = pattern.sub(lambda _: block, existing)
+    telemetry_pattern = re.compile(r'<!-- TELEMETRY:START -->.*?<!-- TELEMETRY:END -->', re.S)
+    if len(telemetry_pattern.findall(result)) != 1:
+        raise ValueError('Expected exactly one telemetry block')
+    telemetry = '<!-- TELEMETRY:START -->\n' + markdown(values['projects']) + '\n<!-- TELEMETRY:END -->'
+    result = telemetry_pattern.sub(lambda _: telemetry, result)
     temporary = path.with_suffix('.md.tmp')
     temporary.write_text(result, encoding='utf-8')
     temporary.replace(path)

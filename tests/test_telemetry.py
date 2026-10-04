@@ -20,3 +20,28 @@ class TelemetryTests(unittest.TestCase):
   self.assertNotIn('<img',result)
   self.assertLess(result.index('Lines of Code on GitHub'),result.index('Public repos'))
 if __name__=='__main__':unittest.main()
+
+class ProvenanceTests(unittest.TestCase):
+ def test_retained_and_changed_lines(self):
+  from provenance import source_split
+  self.assertEqual(source_split('a\n\nb\n','a\nb\n'),(2,0))
+  self.assertEqual(source_split('a\nc\n','a\nb\n'),(1,1))
+  self.assertEqual(source_split('a\n','a\nb\n'),(1,0))
+  self.assertEqual(source_split('new\n',''),(0,1))
+ def test_dependency_paths_are_specific(self):
+  from provenance import dependency
+  self.assertTrue(dependency('Odysseus-Lab','static/lib/mermaid.min.js'))
+  self.assertTrue(dependency('Odysseus-Lab','services/hwfit/fit.py'))
+  self.assertTrue(dependency('CodeMap','vendor/x.js'))
+  self.assertFalse(dependency('AgentBox','lib/api/app.py'))
+  self.assertFalse(dependency('RacOS','libs/libc-lite/src/lib.rs'))
+ def test_baseline_partition(self):
+  import json
+  from unittest.mock import patch
+  from project_telemetry import SOURCE
+  from provenance import provenance
+  files={'UPSTREAM_BASE':json.dumps({'repository':'https://github.com/odysseus-dev/odysseus','commit':'a'*40}),
+         'app.py':'a\nc\n','new.py':'x\n','static/lib/x.js':'vendor\n','README.md':'docs\n'}
+  with patch('provenance.archive_files',return_value={'app.py':'a\nb\n'}):
+   p=provenance({'name':'Odysseus-Lab','full_name':'RaCzKoViC/Odysseus-Lab'},files,category,SOURCE)
+  self.assertEqual((p['project_source'],p['upstream_source'],p['dependency_source']),(2,1,1))

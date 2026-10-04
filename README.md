@@ -1,4 +1,13 @@
+**RaCzKoViC · Systems / AI agents / Games**
+
+I build and explore operating systems, agent tools and games with AI-assisted development. Start with the projects below: what they do, what I maintain and how to run them.
+
+[Portfolio](#featured-portfolio) · [Project status & code origin](#project-telemetry) · [Email](mailto:raczimaczi@icloud.com)
+
 <!-- PROFILE:START -->
+<details open>
+<summary>ASCII terminal · collapse to read the portfolio</summary>
+
 <pre>
                     .:;;;;,..                     <b>RaCzKoViC@github -------------------------------------------</b>
                .:;s2555535522s;.                    <b>OS:</b> ............................ Windows 11 / Ubuntu / iOS
@@ -27,44 +36,19 @@
      ...5Gsssi;rrrAh#G5AriiX5HHXirrA5;.             <b>Email.Personal:</b> .................... <a href="mailto:raczimaczi@icloud.com">raczimaczi@icloud.com</a>
 ,:irsXss5&amp;X;i:irirXA5M5XiirXAX2rir;sr,.           
 sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.            <b>- GitHub Stats ---------------------------------------------</b>
-,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Lines of Code on GitHub:</b> ............ 591,403 source lines
+,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Lines of Code on GitHub:</b> ............ 537,584 source lines
 i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Documentation:</b> .................................... 32,224
-5AihS#GH@&amp;BSHh2r::ir;sX;iii;ii;;2H2r. ,;Arrsi:      <b>Configuration:</b> .................................... 47,575
+5AihS#GH@&amp;BSHh2r::ir;sX;iii;ii;;2H2r. ,;Arrsi:      <b>Configuration:</b> .................................... 12,371
 5X3GhA3HS#99SHh5Xri::i;::;i:;:r5#3XMMXis:r,:iss:    <b>Public repos:</b> .......................................... 6
 25XAhhAr2hHGSSHh5Assrriii;irs2hH93.i5GGG3;: :;rX    <b>Stars received:</b> ....................................... 16
 ssA555M5rs5hhMHHM3AsrrsssXXA5hHS9S,.;X52#HX .;sX    <b>Followers:</b> ............................................. 2
 GH3AXXX3hAiX3h5AA335ArrrrsA5hMGS9#2. :;5GGG3,,;:    <b>Forks received:</b> ........................................ 4
 223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Stars / forks:</b> public, non-fork repositories.
-5XrsA3MMAr5hXiX535:    ,,,::;rrssrr;:2M355AhGh,:    <b>Updated:</b> ............................ 2026-10-04 06:08 UTC
+5XrsA3MMAr5hXiX535:    ,,,::;rrssrr;:2M355AhGh,:    <b>Updated:</b> ............................ 2026-10-04 06:19 UTC
 </pre>
-
-### Project status
-
-| Project | CI · default branch | Latest release | Last change · UTC |
-|---|---|---|---|
-| [AgentBox](https://github.com/RaCzKoViC/AgentBox) | [No CI for this commit](https://github.com/RaCzKoViC/AgentBox/actions) | No release | [2026-10-04 05:50](https://github.com/RaCzKoViC/AgentBox/commit/0547ff709b4ece1799415bc17081626b69090202) |
-| [CodeMap](https://github.com/RaCzKoViC/CodeMap) | [Passed](https://github.com/RaCzKoViC/CodeMap/actions) | [v1.6.0](https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0) | [2026-10-04 05:50](https://github.com/RaCzKoViC/CodeMap/commit/8becd7914b693d102781933f202bd10e76b1bc73) |
-| [Odysseus-Lab](https://github.com/RaCzKoViC/Odysseus-Lab) | [Running](https://github.com/RaCzKoViC/Odysseus-Lab/actions) | No release | [2026-10-04 06:01](https://github.com/RaCzKoViC/Odysseus-Lab/commit/337f5d4d5f91f747c5404b39781bc3c64ea4eb3f) |
-| [RacOS](https://github.com/RaCzKoViC/RacOS) | [Failed](https://github.com/RaCzKoViC/RacOS/actions) | No release | [2026-10-04 05:50](https://github.com/RaCzKoViC/RacOS/commit/37a06d91ce4e571ad20e12a6463f391421a3dc26) |
-| [The-MinerGuy](https://github.com/RaCzKoViC/The-MinerGuy) | [Passed](https://github.com/RaCzKoViC/The-MinerGuy/actions) | [v1.28.0](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.0) | [2026-10-04 05:50](https://github.com/RaCzKoViC/The-MinerGuy/commit/f7a0784802b659b146fd479d4437ce9f37efa212) |
-
-CI refers to the exact default-branch commit; notification workflows are excluded. No release means no published stable GitHub release.
-
-### Lines by project
-
-| Project | Source | Documentation | Configuration |
-|---|---:|---:|---:|
-| AgentBox | 28,076 | 13,175 | 931 |
-| CodeMap | 43,769 | 2,140 | 3,981 |
-| Odysseus-Lab | 422,575 | 8,505 | 37,751 |
-| RacOS | 52,780 | 7,749 | 2,065 |
-| RaCzKoViC | 249 | 58 | 87 |
-| The-MinerGuy | 43,954 | 597 | 2,760 |
-
-Nonblank physical lines, including comments, at the listed commits. Generated/build/dependency directories and the generated profile README are excluded; binaries and unclassified files are not counted. [Counting rules](SETUP.md#counting-rules).
-<!-- PROFILE:DATA {"configuration": 47575, "documentation": 32224, "followers": 2, "forks": 4, "lines": 591403, "projects": [{"changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "documentation": 13175, "name": "AgentBox", "release": "No release", "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076}, {"changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "documentation": 2140, "name": "CodeMap", "release": "v1.6.0", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769}, {"changed": "2026-10-04T06:01:45Z", "ci": "Running", "configuration": 37751, "documentation": 8505, "name": "Odysseus-Lab", "release": "No release", "release_url": null, "sha": "337f5d4d5f91f747c5404b39781bc3c64ea4eb3f", "source": 422575}, {"changed": "2026-10-04T05:50:45Z", "ci": "Failed", "configuration": 2065, "documentation": 7749, "name": "RacOS", "release": "No release", "release_url": null, "sha": "37a06d91ce4e571ad20e12a6463f391421a3dc26", "source": 52780}, {"changed": "2026-10-04T06:08:06Z", "ci": "Running", "configuration": 87, "documentation": 58, "name": "RaCzKoViC", "release": "No release", "release_url": null, "sha": "7a96ba22f713af94168c52d59f8ae1d11f812039", "source": 249}, {"changed": "2026-10-04T05:50:47Z", "ci": "Passed", "configuration": 2760, "documentation": 597, "name": "The-MinerGuy", "release": "v1.28.0", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.0", "sha": "f7a0784802b659b146fd479d4437ce9f37efa212", "source": 43954}], "repos": 6, "stars": 16} -->
+<!-- PROFILE:DATA {"configuration": 12371, "documentation": 32224, "followers": 2, "forks": 4, "lines": 537584, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T06:01:45Z", "ci": "Failed", "configuration": 2547, "dependency_source": 53819, "documentation": 8505, "name": "Odysseus-Lab", "project_source": 7333, "release": "No release", "release_url": null, "sha": "337f5d4d5f91f747c5404b39781bc3c64ea4eb3f", "source": 368756, "upstream_source": 361423}, {"baseline": null, "changed": "2026-10-04T05:50:45Z", "ci": "Failed", "configuration": 2065, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_url": null, "sha": "37a06d91ce4e571ad20e12a6463f391421a3dc26", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T06:08:20Z", "ci": "No CI for this commit", "configuration": 87, "dependency_source": 0, "documentation": 58, "name": "RaCzKoViC", "project_source": 249, "release": "No release", "release_url": null, "sha": "81a9b9af071ec36270cc214210a11998af698e41", "source": 249, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:47Z", "ci": "Passed", "configuration": 2760, "dependency_source": 0, "documentation": 597, "name": "The-MinerGuy", "project_source": 43954, "release": "v1.28.0", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.0", "sha": "f7a0784802b659b146fd479d4437ce9f37efa212", "source": 43954, "upstream_source": 0}], "repos": 6, "stars": 16} -->
+</details>
 <!-- PROFILE:END -->
-
 
 ## Featured portfolio
 
@@ -72,10 +56,9 @@ Nonblank physical lines, including comments, at the listed commits. Generated/bu
 
 Rust x86-64 kernel, UEFI bootloader and userland: system calls, shell, package tools, filesystems and networking. The repository includes QEMU smoke checks and an in-guest test suite.
 
-**Run:** install the Rust toolchain, QEMU/OVMF and image tools using the [Linux setup guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_LINUX.md) or [Windows guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_WINDOWS.md), then:
+**Run:** install the Rust toolchain, QEMU/OVMF and image tools using the [Linux setup guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_LINUX.md) or [Windows guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_WINDOWS.md), clone the linked repository, then:
 
 ```bash
-git clone https://github.com/RaCzKoViC/RacOS.git
 cd RacOS
 just build
 just build-image
@@ -86,12 +69,13 @@ just run-uefi
 
 Original C# / MonoGame game with deterministic worlds, mining and crafting, industrial automation, cooperative multiplayer and a dedicated server. The repository documents logic/integration tests and a real-window end-to-end self-test.
 
-**Run:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. From the cloned repository:
+**Run:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. Clone the linked repository, then:
 
 ```powershell
-git clone https://github.com/RaCzKoViC/The-MinerGuy.git
 cd The-MinerGuy
-dotnet run --project src/MinerGuy/MinerGuy.csproj -c Release
+dotnet run `
+  --project src/MinerGuy/MinerGuy.csproj `
+  -c Release
 ```
 
 [Controls, packaging and tests](https://github.com/RaCzKoViC/The-MinerGuy#quick-start).
@@ -100,13 +84,89 @@ dotnet run --project src/MinerGuy/MinerGuy.csproj -c Release
 
 Independently maintained distribution based on upstream Odysseus: local/API models, agents, MCP tools, research and document workflows. Lab additions include the Liquid Glass theme and branded workspace; upstream compatibility and attribution are documented in the repository.
 
-**Run:** install Docker with Compose, then:
+**Run:** install Docker with Compose, clone the linked repository, then:
 
 ```bash
-git clone https://github.com/RaCzKoViC/Odysseus-Lab.git
 cd Odysseus-Lab
 cp .env.example .env
 docker compose up -d --build
 ```
 
 Open `http://localhost:7000` when the containers are healthy. The initial admin password is printed by `docker compose logs odysseus`. [Setup and configuration](https://github.com/RaCzKoViC/Odysseus-Lab/blob/main/website/setup.md).
+
+
+<!-- TELEMETRY:START -->
+
+## Project telemetry
+
+Source counts describe repository contents, not personal authorship. Third-party code is separated below.
+
+### [AgentBox](https://github.com/RaCzKoViC/AgentBox)
+
+**CI:** [No CI for this commit](https://github.com/RaCzKoViC/AgentBox/actions) · **Release:** No stable release  
+**Last change:** [2026-10-04 05:50 UTC](https://github.com/RaCzKoViC/AgentBox/commit/0547ff709b4ece1799415bc17081626b69090202)
+
+- Project source: **28,076** nonblank lines
+- Documentation: **13,175** · Configuration: **931**
+- Bundled / adapted third-party source: **0**
+
+No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
+
+### [CodeMap](https://github.com/RaCzKoViC/CodeMap)
+
+**CI:** [Passed](https://github.com/RaCzKoViC/CodeMap/actions) · **Release:** [v1.6.0](https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0)  
+**Last change:** [2026-10-04 05:50 UTC](https://github.com/RaCzKoViC/CodeMap/commit/8becd7914b693d102781933f202bd10e76b1bc73)
+
+- Project source: **43,769** nonblank lines
+- Documentation: **2,140** · Configuration: **3,981**
+- Bundled / adapted third-party source: **0**
+
+No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
+
+### [Odysseus-Lab](https://github.com/RaCzKoViC/Odysseus-Lab)
+
+**CI:** [Failed](https://github.com/RaCzKoViC/Odysseus-Lab/actions) · **Release:** No stable release  
+**Last change:** [2026-10-04 06:01 UTC](https://github.com/RaCzKoViC/Odysseus-Lab/commit/337f5d4d5f91f747c5404b39781bc3c64ea4eb3f)
+
+- Project source: **368,756** nonblank lines
+- Documentation: **8,505** · Configuration: **2,547**
+- Bundled / adapted third-party source: **53,819**
+- Retained upstream source: **361,423**
+- Added / replaced source since import: **7,333**
+
+Compared per file with [imported baseline `9d5c031`](https://github.com/RaCzKoViC/Odysseus-Lab/blob/337f5d4d5f91f747c5404b39781bc3c64ea4eb3f/UPSTREAM_BASE). This measures surviving changes from the Lab distribution, including formatting and any later upstream imports; it does not prove who authored each line.
+
+### [RacOS](https://github.com/RaCzKoViC/RacOS)
+
+**CI:** [Failed](https://github.com/RaCzKoViC/RacOS/actions) · **Release:** No stable release  
+**Last change:** [2026-10-04 05:50 UTC](https://github.com/RaCzKoViC/RacOS/commit/37a06d91ce4e571ad20e12a6463f391421a3dc26)
+
+- Project source: **52,780** nonblank lines
+- Documentation: **7,749** · Configuration: **2,065**
+- Bundled / adapted third-party source: **0**
+
+No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
+
+### [RaCzKoViC](https://github.com/RaCzKoViC/RaCzKoViC)
+
+- Project source: **249** nonblank lines
+- Documentation: **58** · Configuration: **87**
+- Bundled / adapted third-party source: **0**
+
+No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
+
+### [The-MinerGuy](https://github.com/RaCzKoViC/The-MinerGuy)
+
+**CI:** [Passed](https://github.com/RaCzKoViC/The-MinerGuy/actions) · **Release:** [v1.28.0](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.0)  
+**Last change:** [2026-10-04 05:50 UTC](https://github.com/RaCzKoViC/The-MinerGuy/commit/f7a0784802b659b146fd479d4437ce9f37efa212)
+
+- Project source: **43,954** nonblank lines
+- Documentation: **597** · Configuration: **2,760**
+- Bundled / adapted third-party source: **0**
+
+No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
+
+
+CI uses the exact default-branch commit. Counts include comments and exclude blank lines, build output, binaries and the generated profile README. Remote packages, Docker images and CDN libraries are not downloaded or counted. [Method and exclusions](SETUP.md#counting-rules).
+
+<!-- TELEMETRY:END -->

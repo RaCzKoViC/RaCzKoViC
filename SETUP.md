@@ -37,3 +37,17 @@ Last change is the default branch HEAD commit's committer date (UTC), linked to 
 ## Validation
 
 Run `python3 -m unittest discover -s tests` and `python3 scripts/generate_stats.py`. Only a complete snapshot is written atomically. Repeat snapshots with identical data leave README unchanged. The workflow serializes profile updates; bot refresh commits do not retrigger through the built-in token.
+
+## Source provenance
+
+The headline source counter measures project source **including retained upstream**, with identified bundled/adapted third-party source removed. It is not labelled as personal authorship. Documentation and configuration likewise describe repository files, not an author's contribution.
+
+For Odysseus-Lab, each snapshot reads `UPSTREAM_BASE` at that snapshot's commit. It validates the repository identity and 40-character SHA, then fetches exactly that commit from `odysseus-dev/odysseus`. No moving upstream branch is used. Per same-path source file, a deterministic sequence comparison divides the current nonblank lines into retained upstream matches and surviving added/replaced lines. Deleted upstream lines are not counted. New files count as additions; renames can appear as new files. Whitespace changes can count as replacements. Later upstream imports may count as changes against the original import, so this metric is a baseline delta, not verified individual authorship.
+
+Identified third-party source is separate: directories named node_modules, vendor, third_party, third-party, external or site-packages; plus Odysseus-Lab's `static/lib/` and adapted-code paths documented in ACKNOWLEDGMENTS.md (`services/hwfit/`, `services/research/`, `services/search/`, cookbook routes/UI, research/hwfit handlers and the cookbook script). Whole documented adapted paths are conservatively credited to third-party/adapted code; this does not claim that every line is unmodified vendor code. Unidentified third-party code can remain in project counts. Other projects have no verified upstream baseline; their source totals do not prove exclusive personal authorship.
+
+Only tracked UTF-8 source files under the snapshot size limit are counted. Dependencies referenced by manifests, Docker images and CDN libraries are not downloaded or counted. Third-party source is not added to the headline project source count. Aggregate project source equals project-maintained/local-baseline-delta source plus retained upstream source; dependency source is disjoint.
+
+## Narrow-screen reading
+
+The opening text and anchor links wrap normally. The real ASCII terminal remains selectable and can be collapsed using its summary. The portfolio follows the terminal immediately, with shortened launch commands. Project status and provenance are vertical blocks, avoiding wide tables. GitHub does not support custom responsive CSS in profile Markdown; the ASCII terminal can still scroll horizontally on a narrow screen while ordinary prose wraps.

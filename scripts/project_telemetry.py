@@ -4,6 +4,7 @@ import urllib.request
 from pathlib import PurePosixPath
 from concurrent.futures import ThreadPoolExecutor
 from urllib.error import HTTPError
+from provenance import archive_files, provenance, dependency
 
 SOURCE = set('rs py js mjs cjs ts tsx jsx c h cpp hpp cc cs java go rb php swift kt kts sh bash ps1 bat cmd asm s lua sql vue svelte css scss sass less html htm'.split())
 DOCS = set('md mdx rst txt adoc tex'.split())
@@ -32,20 +33,13 @@ def snapshot(repo, api):
     base = '/repos/' + repo['full_name']
     commit = api(base + '/commits/' + repo['default_branch'])
     sha = commit['sha']; totals = dict(source=0, documentation=0, configuration=0)
-    req = urllib.request.Request('https://api.github.com'+base+'/tarball/'+sha, headers={'User-Agent':'profile-telemetry'})
-    with urllib.request.urlopen(req, timeout=120) as response:
-        with tarfile.open(fileobj=response, mode='r|gz') as archive:
-            for member in archive:
-                if not member.isfile() or member.size > 10_000_000: continue
-                path = '/'.join(PurePosixPath(member.name).parts[1:])
-                kind = category(path)
-                # Generated README excluded to avoid a self-referential counter.
-                if not kind or (repo['name'] == 'RaCzKoViC' and path == 'README.md'): continue
-                data = archive.extractfile(member).read()
-                if b'\0' in data: continue
-                try: text = data.decode('utf-8-sig')
-                except UnicodeDecodeError: continue
-                totals[kind] += sum(bool(line.strip()) for line in text.splitlines())
+    files = archive_files(repo['full_name'], sha)
+    origins = provenance(repo, files, category, SOURCE)
+    for path, text in files.items():
+        kind = category(path)
+        if not kind or dependency(repo['name'], path) or (repo['name'] == 'RaCzKoViC' and path == 'README.md'): continue
+        totals[kind] += sum(bool(line.strip()) for line in text.splitlines())
+    assert totals['source'] == origins['project_source'] + origins['upstream_source']
     runs = []
     page = 1
     while True:
@@ -63,7 +57,7 @@ def snapshot(repo, api):
         release = None
     return dict(name=repo['name'], sha=sha, changed=commit['commit']['committer']['date'],
                 ci=ci_state(list(latest.values())), release=release['tag_name'] if release else 'No release',
-                release_url=release['html_url'] if release else None, **totals)
+                release_url=release['html_url'] if release else None, **totals, **origins)
 
 def collect_projects(repos, api):
     with ThreadPoolExecutor(max_workers=3) as pool:
@@ -71,13 +65,23 @@ def collect_projects(repos, api):
 
 def markdown(projects):
     def safe(s): return str(s).replace('|','\\|').replace('\n',' ').replace('`','')
-    rows=['\n### Project status\n', '| Project | CI · default branch | Latest release | Last change · UTC |', '|---|---|---|---|']
+    rows=['\n## Project telemetry\n', 'Source counts describe repository contents, not personal authorship. Third-party code is separated below.\n']
     for p in projects:
-        if p['name']=='RaCzKoViC': continue
         url='https://github.com/RaCzKoViC/'+p['name']
-        release='['+safe(p['release'])+']('+p['release_url']+')' if p['release_url'] else 'No release'
-        rows.append(f"| [{safe(p['name'])}]({url}) | [{p['ci']}]({url}/actions) | {release} | [{p['changed'][:16].replace('T',' ')}]({url}/commit/{p['sha']}) |")
-    rows += ['\nCI refers to the exact default-branch commit; notification workflows are excluded. No release means no published stable GitHub release.\n', '### Lines by project\n', '| Project | Source | Documentation | Configuration |','|---|---:|---:|---:|']
-    for p in projects: rows.append(f"| {safe(p['name'])} | {p['source']:,} | {p['documentation']:,} | {p['configuration']:,} |")
-    rows.append('\nNonblank physical lines, including comments, at the listed commits. Generated/build/dependency directories and the generated profile README are excluded; binaries and unclassified files are not counted. [Counting rules](SETUP.md#counting-rules).\n')
+        rows.append('### ['+safe(p['name'])+']('+url+')\n')
+        if p['name'] != 'RaCzKoViC':
+            release='['+safe(p['release'])+']('+p['release_url']+')' if p['release_url'] else 'No stable release'
+            rows.append(f"**CI:** [{p['ci']}]({url}/actions) · **Release:** {release}  ")
+            rows.append(f"**Last change:** [{p['changed'][:16].replace('T',' ')} UTC]({url}/commit/{p['sha']})\n")
+        rows.append(f"- Project source: **{p['source']:,}** nonblank lines")
+        rows.append(f"- Documentation: **{p['documentation']:,}** · Configuration: **{p['configuration']:,}**")
+        rows.append(f"- Bundled / adapted third-party source: **{p['dependency_source']:,}**")
+        if p['baseline']:
+            base=p['baseline']['commit']
+            rows.append(f"- Retained upstream source: **{p['upstream_source']:,}**")
+            rows.append(f"- Added / replaced source since import: **{p['project_source']:,}**")
+            rows.append(f"\nCompared per file with [imported baseline `{base[:7]}`]({url}/blob/{p['sha']}/UPSTREAM_BASE). This measures surviving changes from the Lab distribution, including formatting and any later upstream imports; it does not prove who authored each line.\n")
+        else:
+            rows.append('\nNo imported upstream baseline is configured. Project source is not a verified personal-authorship count.\n')
+    rows.append('\nCI uses the exact default-branch commit. Counts include comments and exclude blank lines, build output, binaries and the generated profile README. Remote packages, Docker images and CDN libraries are not downloaded or counted. [Method and exclusions](SETUP.md#counting-rules).\n')
     return '\n'.join(rows)
