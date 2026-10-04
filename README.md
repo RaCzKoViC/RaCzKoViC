@@ -69,7 +69,9 @@ just run-uefi
 
 Original C# / MonoGame game with deterministic worlds, mining and crafting, industrial automation, cooperative multiplayer and a dedicated server. The repository documents logic/integration tests and a real-window end-to-end self-test.
 
-**Run:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. Clone the linked repository, then:
+**Play:** download the Windows installer from the [latest release](https://github.com/RaCzKoViC/The-MinerGuy/releases/latest) or the [website](https://raczkovic.github.io/The-MinerGuy/).
+
+**Run from source:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. Clone the linked repository, then:
 
 ```powershell
 cd The-MinerGuy
@@ -78,7 +80,7 @@ dotnet run `
   -c Release
 ```
 
-[Controls, packaging and tests](https://github.com/RaCzKoViC/The-MinerGuy#quick-start).
+[Download and install](https://github.com/RaCzKoViC/The-MinerGuy#-download-and-install) · [Controls](https://github.com/RaCzKoViC/The-MinerGuy#-controls) · [Build, packaging and tests](https://github.com/RaCzKoViC/The-MinerGuy/blob/main/CONTRIBUTING.md#development-setup).
 
 ### [Odysseus-Lab](https://github.com/RaCzKoViC/Odysseus-Lab) · AI workspace
 
