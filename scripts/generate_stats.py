@@ -4,16 +4,14 @@ import json
 import os
 import re
 import urllib.request
-import time
-import subprocess
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
+from project_telemetry import collect_projects, markdown
 
 ROOT = Path(__file__).resolve().parents[1]
-LEFT_WIDTH = 44
-RIGHT_WIDTH = 64
+LEFT_WIDTH = 48
+RIGHT_WIDTH = 60
 START = '<!-- PROFILE:START -->'
 END = '<!-- PROFILE:END -->'
 
@@ -26,50 +24,8 @@ def api(path):
     request = urllib.request.Request('https://api.github.com' + path, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
         if response.status == 202:
-            raise StatisticsPending(path)
+            raise RuntimeError("API response is not ready")
         return json.load(response)
-
-
-class StatisticsPending(RuntimeError):
-    pass
-
-
-def count_numstat(history):
-    added = deleted = 0
-    for line in history.splitlines():
-        columns = line.split('\t', 2)
-        if len(columns) == 3 and columns[0].isdigit() and columns[1].isdigit():
-            added += int(columns[0])
-            deleted += int(columns[1])
-    return added, deleted
-
-
-def code_frequency(repo):
-    """GitHub counts tracked text changes; this is not a source-only parser."""
-    if repo['full_name'] == 'RaCzKoViC/RaCzKoViC' and (ROOT / '.git').exists():
-        history = subprocess.run(
-            ['git', '-C', str(ROOT), 'log', '--no-merges', '--invert-grep',
-             '--grep=^chore(profile): refresh public statistics$',
-             '--format=', '--numstat', 'HEAD'],
-            check=True, capture_output=True, text=True).stdout
-        return count_numstat(history)
-    path = '/repos/' + repo['full_name'] + '/stats/code_frequency'
-    for attempt in range(10):
-        try:
-            weeks = api(path)
-            if not isinstance(weeks, list):
-                raise ValueError('Unexpected code-frequency response')
-            if any(len(week) != 3 for week in weeks):
-                raise ValueError('Invalid code-frequency row')
-            added = sum(week[1] for week in weeks)
-            deleted = -sum(week[2] for week in weeks)
-            if weeks and added == 0 and deleted == 0:
-                raise ValueError('GitHub returned empty line counts for a nonempty repository')
-            return added, deleted
-        except StatisticsPending:
-            if attempt == 9:
-                raise
-            time.sleep(10)
 
 
 def collect(username):
@@ -83,12 +39,11 @@ def collect(username):
             break
         page += 1
     originals = [r for r in repos if not r.get('fork')]
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        counts = list(pool.map(code_frequency, originals))
-    added = sum(pair[0] for pair in counts)
-    deleted = sum(pair[1] for pair in counts)
-    return {'lines': added - deleted, 'added': added, 'deleted': deleted,
-            'repos': user['public_repos'], 'followers': user['followers'],
+    projects = collect_projects(originals, api)
+    return {'lines': sum(p['source'] for p in projects),
+            'documentation': sum(p['documentation'] for p in projects),
+            'configuration': sum(p['configuration'] for p in projects),
+            'projects': projects, 'repos': user['public_repos'], 'followers': user['followers'],
             'stars': sum(r['stargazers_count'] for r in originals),
             'forks': sum(r['forks_count'] for r in originals)}
 
@@ -147,7 +102,7 @@ def render(values, updated, portrait):
     row()
     section('- GitHub Stats')
     field('Lines of Code on GitHub',
-          f"{values['lines']:,} ({values['added']:,}++, {values['deleted']:,}--)")
+          f"{values['lines']:,} source lines")
     field('Public repos', f"{values['repos']:,}")
     field('Stars received', f"{values['stars']:,}")
     field('Followers', f"{values['followers']:,}")
@@ -155,16 +110,16 @@ def render(values, updated, portrait):
     row('  Stars / forks: public, non-fork repositories.',
         '  <b>Stars / forks:</b> public, non-fork repositories.')
     field('Updated', updated + ' UTC')
-    row('  Refresh: on profile push / check every 5 minutes.')
-    row('  Lines: additions minus deletions; tracked text.')
+    field('Documentation', f"{values['documentation']:,}")
+    field('Configuration', f"{values['configuration']:,}")
     left = portrait.splitlines()
     if len(left) != len(rows):
         raise ValueError(f'Expected {len(rows)} portrait lines, got {len(left)}')
     if any(len(line) > LEFT_WIDTH for line in left):
         raise ValueError('Portrait exceeds its column width')
-    lines = [escape(line.ljust(LEFT_WIDTH)) + '   ' + right for line, right in zip(left, rows)]
+    lines = [escape(line.ljust(LEFT_WIDTH)) + '  ' + right for line, right in zip(left, rows)]
     return (START + '\n<pre>\n' + '\n'.join(lines) + '\n</pre>\n'
-            + '<!-- PROFILE:DATA ' + json.dumps(values, sort_keys=True) + ' -->\n' + END)
+            + markdown(values['projects']) + '<!-- PROFILE:DATA ' + json.dumps(values, sort_keys=True) + ' -->\n' + END)
 
 
 def main():

@@ -2,10 +2,8 @@ name: Update profile telemetry
 on:
   push:
   repository_dispatch:
-    types: [code_changed]
+    types: [code_changed, project_changed]
   workflow_dispatch:
-  schedule:
-    - cron: "2-57/5 * * * *"
 permissions:
   contents: write
 concurrency:
@@ -24,6 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate telemetry rules
+        run: python -m unittest discover -s tests
       - name: Update public GitHub telemetry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
