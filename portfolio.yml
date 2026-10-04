@@ -1,0 +1,85 @@
+# Featured portfolio configuration.
+#
+# scripts/generate_stats.py renders the README block between
+# <!-- PORTFOLIO:START --> and <!-- PORTFOLIO:END --> from this file plus live
+# GitHub data (description, homepage / Pages URL, topics, language, stars,
+# latest release and its date, CI status and last change of the default branch).
+# Edit this file, not the generated README block.
+#
+# featured: rendered in this order. A repository that is private, missing,
+#   archived or a fork is skipped, so an entry can be prepared before it is public.
+#   repo     repository name under RaCzKoViC (required)
+#   title    heading text (default: repository name)
+#   kind     short label after the heading
+#   summary  hand-written introduction (default: the repository description)
+#   tagline  show the live repository description above the summary (default: true;
+#            hidden when it is empty, equals the repository name or equals summary)
+#   body     hand-written Markdown (run instructions, links). Placeholders:
+#            {{repo_url}} {{website}} {{latest_release}} {{release_tag}}
+# more: every other public, non-fork, non-archived repository is listed
+#   automatically, so a newly published repository appears without editing.
+heading: Featured portfolio
+topics_limit: 6
+
+featured:
+  - repo: RacOS
+    kind: operating system
+    tagline: false
+    summary: >-
+      Rust x86-64 kernel, UEFI bootloader and userland: system calls, shell,
+      package tools, filesystems and networking. The repository includes QEMU
+      smoke checks and an in-guest test suite.
+    body: |
+      **Run:** install the Rust toolchain, QEMU/OVMF and image tools using the [Linux setup guide]({{repo_url}}/blob/main/docs/DEVELOPMENT_LINUX.md) or [Windows guide]({{repo_url}}/blob/main/docs/DEVELOPMENT_WINDOWS.md), clone the linked repository, then:
+
+      ```bash
+      cd RacOS
+      just build
+      just build-image
+      just run-uefi
+      ```
+
+  - repo: The-MinerGuy
+    title: The MinerGuy
+    kind: sandbox game
+    summary: >-
+      Original C# / MonoGame game with deterministic worlds, mining and
+      crafting, industrial automation, cooperative multiplayer and a dedicated
+      server. The repository documents logic/integration tests and a
+      real-window end-to-end self-test.
+    body: |
+      **Play:** download the Windows installer from the [latest release]({{latest_release}}) or the [website]({{website}}).
+
+      **Run from source:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. Clone the linked repository, then:
+
+      ```powershell
+      cd The-MinerGuy
+      dotnet run `
+        --project src/MinerGuy/MinerGuy.csproj `
+        -c Release
+      ```
+
+      [Download and install]({{repo_url}}#-download-and-install) · [Controls]({{repo_url}}#-controls) · [Build, packaging and tests]({{repo_url}}/blob/main/CONTRIBUTING.md#development-setup).
+
+  - repo: Odysseus-Lab
+    kind: AI workspace
+    summary: >-
+      Independently maintained distribution based on upstream Odysseus:
+      local/API models, agents, MCP tools, research and document workflows.
+      Lab additions include the Liquid Glass theme and branded workspace;
+      upstream compatibility and attribution are documented in the repository.
+    body: |
+      **Run:** install Docker with Compose, clone the linked repository, then:
+
+      ```bash
+      cd Odysseus-Lab
+      cp .env.example .env
+      docker compose up -d --build
+      ```
+
+      Open `http://localhost:7000` when the containers are healthy. The initial admin password is printed by `docker compose logs odysseus`. [Setup and configuration]({{repo_url}}/blob/main/website/setup.md).
+
+more:
+  enabled: true
+  heading: More public projects
+  exclude: [RaCzKoViC]

@@ -43,18 +43,21 @@ i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Configuration:</b> ......
 25XAhhAr2hHGSSHh5Assrriii;irs2hH93.i5GGG3;: :;rX    <b>Followers:</b> ............................................. 3
 ssA555M5rs5hhMHHM3AsrrsssXXA5hHS9S,.;X52#HX .;sX    <b>Forks received:</b> ........................................ 4
 GH3AXXX3hAiX3h5AA335ArrrrsA5hMGS9#2. :;5GGG3,,;:    <b>Stars / forks:</b> public, non-fork repositories.
-223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-10-04 17:46 UTC
+223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-10-04 19:39 UTC
 5XrsA3MMAr5hXiX535:    ,,,::;rrssrr;:2M355AhGh,:  
 </pre>
-<!-- PROFILE:DATA {"configuration": 12648, "documentation": 36833, "followers": 3, "forks": 4, "lines": 540892, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-10-04T14:16:43Z", "ci": "Passed", "configuration": 2128, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_url": null, "sha": "eb82712c8e959724027500cfb0d5451e43746a2c", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T17:44:16Z", "ci": "Running", "configuration": 87, "dependency_source": 0, "documentation": 65, "name": "RaCzKoViC", "project_source": 346, "release": "No release", "release_url": null, "sha": "9f9a5609908092ac86cd35bc87c1b2a364378444", "source": 346, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T17:42:28Z", "ci": "Passed", "configuration": 2939, "dependency_source": 0, "documentation": 5108, "name": "The-MinerGuy", "project_source": 45015, "release": "v1.28.1", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1", "sha": "0e196b6eb9eb6874d3180ba2c529c673d8638ce5", "source": 45015, "upstream_source": 0}], "repos": 6, "stars": 16} -->
+<!-- PROFILE:DATA {"configuration": 12648, "documentation": 36833, "followers": 3, "forks": 4, "lines": 540892, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_date": null, "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_date": "2026-09-27T13:06:18Z", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_date": null, "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-10-04T14:16:43Z", "ci": "Passed", "configuration": 2128, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_date": null, "release_url": null, "sha": "eb82712c8e959724027500cfb0d5451e43746a2c", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T17:46:19Z", "ci": "No CI for this commit", "configuration": 87, "dependency_source": 0, "documentation": 65, "name": "RaCzKoViC", "project_source": 346, "release": "No release", "release_date": null, "release_url": null, "sha": "407935fc4048471f4172a5034a85faded2c709bb", "source": 346, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T17:42:28Z", "ci": "Passed", "configuration": 2939, "dependency_source": 0, "documentation": 5108, "name": "The-MinerGuy", "project_source": 45015, "release": "v1.28.1", "release_date": "2026-10-04T16:19:20Z", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1", "sha": "0e196b6eb9eb6874d3180ba2c529c673d8638ce5", "source": 45015, "upstream_source": 0}], "repos": 6, "stars": 16} -->
 </details>
 <!-- PROFILE:END -->
 
+<!-- PORTFOLIO:START -->
 ## Featured portfolio
 
 ### [RacOS](https://github.com/RaCzKoViC/RacOS) · operating system
 
 Rust x86-64 kernel, UEFI bootloader and userland: system calls, shell, package tools, filesystems and networking. The repository includes QEMU smoke checks and an in-guest test suite.
+
+**Status:** Rust · No release yet · CI: [Passed](https://github.com/RaCzKoViC/RacOS/actions) · ★ 16 · Last change [2026-10-04](https://github.com/RaCzKoViC/RacOS/commit/eb82712c8e959724027500cfb0d5451e43746a2c)
 
 **Run:** install the Rust toolchain, QEMU/OVMF and image tools using the [Linux setup guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_LINUX.md) or [Windows guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_WINDOWS.md), clone the linked repository, then:
 
@@ -67,7 +70,13 @@ just run-uefi
 
 ### [The MinerGuy](https://github.com/RaCzKoViC/The-MinerGuy) · sandbox game
 
+_⛏️ Dig deep, build big, survive the guardians — a 2D pixel-art sandbox survival, crafting &amp; automation game for Windows with co-op for up to 8 players. Built with C# and MonoGame._
+
 Original C# / MonoGame game with deterministic worlds, mining and crafting, industrial automation, cooperative multiplayer and a dedicated server. The repository documents logic/integration tests and a real-window end-to-end self-test.
+
+**Status:** C# · Release [v1.28.1](https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.28.1) (2026-10-04) · CI: [Passed](https://github.com/RaCzKoViC/The-MinerGuy/actions) · [Website](https://raczkovic.github.io/The-MinerGuy/) · Last change [2026-10-04](https://github.com/RaCzKoViC/The-MinerGuy/commit/0e196b6eb9eb6874d3180ba2c529c673d8638ce5)
+
+**Topics:** `2d-game` `crafting-game` `csharp` `dotnet` `game` `gamedev` +8 more
 
 **Play:** download the Windows installer from the [latest release](https://github.com/RaCzKoViC/The-MinerGuy/releases/latest) or the [website](https://raczkovic.github.io/The-MinerGuy/).
 
@@ -86,6 +95,8 @@ dotnet run `
 
 Independently maintained distribution based on upstream Odysseus: local/API models, agents, MCP tools, research and document workflows. Lab additions include the Liquid Glass theme and branded workspace; upstream compatibility and attribution are documented in the repository.
 
+**Status:** Python · No release yet · CI: [Passed](https://github.com/RaCzKoViC/Odysseus-Lab/actions) · [Website](https://raczkovic.github.io/Odysseus-Lab/) · Last change [2026-10-04](https://github.com/RaCzKoViC/Odysseus-Lab/commit/bd683e3d80de288877a619e198fdd2c84fe249de)
+
 **Run:** install Docker with Compose, clone the linked repository, then:
 
 ```bash
@@ -95,6 +106,14 @@ docker compose up -d --build
 ```
 
 Open `http://localhost:7000` when the containers are healthy. The initial admin password is printed by `docker compose logs odysseus`. [Setup and configuration](https://github.com/RaCzKoViC/Odysseus-Lab/blob/main/website/setup.md).
+
+### More public projects
+
+- **[AgentBox](https://github.com/RaCzKoViC/AgentBox)** — autonomous multi-agent Control Plane (v5.5): policy, workers, intelligence, planning, tools, evaluation, dashboard  
+  Python · No release yet · CI: [No CI for this commit](https://github.com/RaCzKoViC/AgentBox/actions) · Last change [2026-10-04](https://github.com/RaCzKoViC/AgentBox/commit/0547ff709b4ece1799415bc17081626b69090202)
+- **[CodeMap](https://github.com/RaCzKoViC/CodeMap)** — Kartografia Kodu: lokalna wizualizacja struktury kodu i zależności w stylu Maltego (czysty JS + canvas, PWA, MindMap, lokalne AI, opcjonalny backend Fastify+SQLite). Open source, MIT.  
+  JavaScript · Release [v1.6.0](https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0) (2026-09-27) · CI: [Passed](https://github.com/RaCzKoViC/CodeMap/actions) · [Website](https://raczkovic.github.io/CodeMap/) · Last change [2026-10-04](https://github.com/RaCzKoViC/CodeMap/commit/8becd7914b693d102781933f202bd10e76b1bc73)
+<!-- PORTFOLIO:END -->
 
 
 <!-- TELEMETRY:START -->

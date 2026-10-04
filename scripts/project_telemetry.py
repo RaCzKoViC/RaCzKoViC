@@ -57,7 +57,8 @@ def snapshot(repo, api):
         release = None
     return dict(name=repo['name'], sha=sha, changed=commit['commit']['committer']['date'],
                 ci=ci_state(list(latest.values())), release=release['tag_name'] if release else 'No release',
-                release_url=release['html_url'] if release else None, **totals, **origins)
+                release_url=release['html_url'] if release else None,
+                release_date=release['published_at'] if release else None, **totals, **origins)
 
 def collect_projects(repos, api):
     with ThreadPoolExecutor(max_workers=3) as pool:

@@ -4,9 +4,9 @@ The profile uses real selectable ASCII text. The portrait is 48 columns wide; th
 
 ## Event updates
 
-The profile refreshes on a default-branch push, manual workflow run, or `repository_dispatch` (`project_changed` / legacy `code_changed`). There is no scheduled polling.
+The profile refreshes on a default-branch push, manual workflow run, `repository_dispatch` (`project_changed` / legacy `code_changed`), and a daily scheduled run (03:23 UTC). The schedule is a safety net for changes that emit no event to the profile: repository description, topics, homepage, stars, Pages, and repositories that are created, published or archived. A run whose data is unchanged makes no commit.
 
-RacOS, The-MinerGuy, AgentBox and CodeMap have `.github/workflows/notify-profile.yml`, also available as [a template](integrations/notify-profile.yml). Odysseus-Lab's integration was merged through [PR #44](https://github.com/RaCzKoViC/Odysseus-Lab/pull/44) after its required checks passed. It notifies the profile on main pushes, published/edited/deleted releases and CI runs starting/completing on main. Odysseus-Lab uses a reusable notification job after each main CI workflow instead of workflow_run; the receiver briefly waits for that specific notifying run to finish so its final verdict is captured. Delivery failures in that reusable job are advisory and do not change the application CI verdict. It does not check out or execute project code, consume artifacts or caches. Its own runs and fork-origin runs are excluded. Future repositories need this workflow plus the secret below; discovery of new repositories requires a profile event.
+RacOS, The-MinerGuy, AgentBox and CodeMap have `.github/workflows/notify-profile.yml`, also available as [a template](integrations/notify-profile.yml). Odysseus-Lab's integration was merged through [PR #44](https://github.com/RaCzKoViC/Odysseus-Lab/pull/44) after its required checks passed. It notifies the profile on main pushes, published/edited/deleted releases and CI runs starting/completing on main. Odysseus-Lab uses a reusable notification job after each main CI workflow instead of workflow_run; the receiver briefly waits for that specific notifying run to finish so its final verdict is captured. Delivery failures in that reusable job are advisory and do not change the application CI verdict. It does not check out or execute project code, consume artifacts or caches. Its own runs and fork-origin runs are excluded. Future repositories should get this workflow plus the secret below for immediate updates; without it, a newly published repository is still discovered by the next daily run.
 
 ### Required activation
 
@@ -16,7 +16,16 @@ Then run `Notify profile` manually in each project. A successful sender receives
 
 The generated data includes all public owned repositories that GitHub marks as non-forks. GitHub's fork flag is a counting scope, not a claim of original authorship; Odysseus-Lab's upstream origin is disclosed in the portfolio. Private repositories are excluded.
 
-Stars and followers are captured at the next project/profile event or manual refresh; this workflow does not receive follower events.
+Stars and followers are captured at the next project/profile event, the daily run, or a manual refresh; GitHub sends no star or follower events to this workflow.
+
+## Featured portfolio
+
+The `## Featured portfolio` section is generated between `<!-- PORTFOLIO:START -->` and `<!-- PORTFOLIO:END -->` by `scripts/portfolio.py` (called from `scripts/generate_stats.py`). Do not edit that block by hand; edit [`portfolio.yml`](portfolio.yml):
+
+- `featured` sets the order, heading, label, hand-written summary and Markdown body (run instructions and links) of each highlighted repository. Bodies may use `{{repo_url}}`, `{{website}}`, `{{latest_release}}` and `{{release_tag}}`, which resolve from live data.
+- Every other public, non-fork, non-archived repository is listed automatically under *More public projects* (`more.exclude` hides repositories such as this profile). A featured entry for a private repository is skipped until the repository becomes public.
+
+Live data per repository: description (shown as a tagline unless `tagline: false`), language, latest stable release with publication date, GitHub Actions status of the default-branch HEAD, stars, website (homepage, otherwise the GitHub Pages URL), topics and last change. Rendering contains no clock values, so identical data yields an identical README and no commit; the terminal's *Updated* time changes only when its statistics change.
 
 ## Counting rules
 
