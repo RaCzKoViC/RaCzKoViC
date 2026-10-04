@@ -27,14 +27,15 @@
        rSsss;;rrs5GS5Xr;iX3G5;rrX2:              <b>Email.Personal:</b> ........................ <a href="mailto:raczimaczi@icloud.com">raczimaczi@icloud.com</a>
 .:irssssBA:i,ii;sX2h5Xi;rXXAsir;rr..           
 sssA5Xi;BSi,:sr;XsssAiisssr;sri;r,             <b>- GitHub Stats -------------------------------------------------</b>
-.;2s;:,:B9Mr,irssrXrXr;riis;is;rsri:             <b>Public repos:</b> .............................................. 6
-;2;XMA:A@#Ghr:rr;rsiXii;;s:;;is:.;rXA;:.         <b>Stars received:</b> ........................................... 16
-5XrHSShB&amp;9SH3X;,;r;rX;ii;;ii:sH2r  .iAisr;       <b>Followers:</b> ................................................. 2
-2XhH2AMGS##GMh2si;,;;:,;;,:;XGHrMhsri;i.;rs:     <b>Forks received:</b> ............................................ 4
-A2sAh2ishMHGGM32ssrri;;;irs5M#H i5GHGs:.,;rX     <b>Stars / forks:</b> public, non-fork repositories.
-ssA22hhsi233hMMh2sirsssssA5hH##: :A23#5: ;rs     <b>Lines of Code on GitHub:</b> ....... 753,867 (778,580++, 24,713--)
-HM2XXsAM2is532X2332siirsA5hMG#95  :;hHGH; ;:     <b>Updated:</b> ................................ 2026-10-04 05:18 UTC
-A23MM3Xs33rr235;.;rri;is23MHS##HX;:5HMhhGr .     Refresh: every 6 hours via GitHub Actions.
+.;2s;:,:B9Mr,irssrXrXr;riis;is;rsri:             <b>Lines of Code on GitHub:</b> ....... 753,874 (778,596++, 24,722--)
+;2;XMA:A@#Ghr:rr;rsiXii;;s:;;is:.;rXA;:.         <b>Public repos:</b> .............................................. 6
+5XrHSShB&amp;9SH3X;,;r;rX;ii;;ii:sH2r  .iAisr;       <b>Stars received:</b> ........................................... 16
+2XhH2AMGS##GMh2si;,;;:,;;,:;XGHrMhsri;i.;rs:     <b>Followers:</b> ................................................. 2
+A2sAh2ishMHGGM32ssrri;;;irs5M#H i5GHGs:.,;rX     <b>Forks received:</b> ............................................ 4
+ssA22hhsi233hMMh2sirsssssA5hH##: :A23#5: ;rs     <b>Stars / forks:</b> public, non-fork repositories.
+HM2XXsAM2is532X2332siirsA5hMG#95  :;hHGH; ;:     <b>Updated:</b> ................................ 2026-10-04 05:33 UTC
+A23MM3Xs33rr235;.;rri;is23MHS##HX;:5HMhhGr .     Refresh: on profile push / check every 5 minutes.
 2sis2hM2i2hsiX53s    .,,,:;rrrri;:5M2522HM::     Lines: additions minus deletions; tracked text.
 </pre>
+<!-- PROFILE:DATA {"added": 778596, "deleted": 24722, "followers": 2, "forks": 4, "lines": 753874, "repos": 6, "stars": 16} -->
 <!-- PROFILE:END -->
