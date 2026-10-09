@@ -44,22 +44,13 @@ featured:
     kind: sandbox game
     summary: >-
       Original C# / MonoGame game with deterministic worlds, mining and
-      crafting, industrial automation, cooperative multiplayer and a dedicated
-      server. The repository documents logic/integration tests and a
-      real-window end-to-end self-test.
+      crafting, industrial automation, cooperative multiplayer for up to 8
+      players and a dedicated server. Free Windows builds that update
+      themselves; the source code is private.
     body: |
-      **Play:** download the Windows installer from the [latest release]({{latest_release}}) or the [website]({{website}}).
+      **Play:** download the Windows installer from the [latest release]({{latest_release}}) or the [website]({{website}}) — no .NET installation needed, and the game offers new versions from its main menu.
 
-      **Run from source:** Windows 10+, .NET 8 SDK and an OpenGL 3.x GPU. Clone the linked repository, then:
-
-      ```powershell
-      cd The-MinerGuy
-      dotnet run `
-        --project src/MinerGuy/MinerGuy.csproj `
-        -c Release
-      ```
-
-      [Download and install]({{repo_url}}#-download-and-install) · [Controls]({{repo_url}}#-controls) · [Build, packaging and tests]({{repo_url}}/blob/main/CONTRIBUTING.md#development-setup).
+      [Download and install]({{repo_url}}#-download-and-install) · [Controls]({{repo_url}}#-controls) · [Report a bug]({{repo_url}}/issues/new?template=bug_report.yml) · [Changelog]({{repo_url}}/blob/main/CHANGELOG.md).
 
   - repo: Odysseus-Lab
     kind: AI workspace
