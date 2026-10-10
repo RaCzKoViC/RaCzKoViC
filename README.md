@@ -59,6 +59,8 @@ Rust x86-64 kernel, UEFI bootloader and userland: system calls, shell, package t
 
 **Status:** Rust · No release yet · CI: [Passed](https://github.com/RaCzKoViC/RacOS/actions) · ★ 16 · Last change [2026-10-04](https://github.com/RaCzKoViC/RacOS/commit/eb82712c8e959724027500cfb0d5451e43746a2c)
 
+**Topics:** `kernel` `no-std` `operating-system` `osdev` `rust` `uefi` +1 more
+
 **Run:** install the Rust toolchain, QEMU/OVMF and image tools using the [Linux setup guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_LINUX.md) or [Windows guide](https://github.com/RaCzKoViC/RacOS/blob/main/docs/DEVELOPMENT_WINDOWS.md), clone the linked repository, then:
 
 ```bash
@@ -84,9 +86,13 @@ Original C# / MonoGame game with deterministic worlds, mining and crafting, indu
 
 ### [Odysseus-Lab](https://github.com/RaCzKoViC/Odysseus-Lab) · AI workspace
 
+_Odysseus-Lab — Build. Research. Automate. A local-first AI agent and development laboratory (upstream-compatible fork of odysseus-dev/odysseus). AGPL-3.0._
+
 Independently maintained distribution based on upstream Odysseus: local/API models, agents, MCP tools, research and document workflows. Lab additions include the Liquid Glass theme and branded workspace; upstream compatibility and attribution are documented in the repository.
 
 **Status:** Python · No release yet · CI: [Passed](https://github.com/RaCzKoViC/Odysseus-Lab/actions) · [Website](https://raczkovic.github.io/Odysseus-Lab/) · Last change [2026-10-04](https://github.com/RaCzKoViC/Odysseus-Lab/commit/bd683e3d80de288877a619e198fdd2c84fe249de)
+
+**Topics:** `agents` `ai` `docker` `fastapi` `llm` `local-first` +3 more
 
 **Run:** install Docker with Compose, clone the linked repository, then:
 
