@@ -35,18 +35,18 @@ I build and explore operating systems, agent tools and games with AI-assisted de
      ..,3M5AXXXXss3B#M2ssiiX5hMXs35A3A.             <b>Repositories:</b> ............................ <a href="https://github.com/RaCzKoViC?tab=repositories">Browse projects</a>
      ...5Gsssi;rrrAh#G5AriiX5HHXirrA5;.           
 ,:irsXss5&amp;X;i:irirXA5M5XiirXAX2rir;sr,.           <b>- GitHub Stats ---------------------------------------------</b>
-sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.              <b>Lines of Code on GitHub:</b> ............ 496,640 source lines
-,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Documentation:</b> .................................... 36,708
+sXXX52s;X@Gr:;rX;XXAsAArrsXssiisri;r,.              <b>Lines of Code on GitHub:</b> ............ 496,734 source lines
+,;2Ar;:,A@9Mr,irrXrXssArirr;sr;ss;ssri:.            <b>Documentation:</b> .................................... 36,756
 i2riM3s;H@9GMX:irrisrrAiii;si;;irX:,;iXAr::         <b>Configuration:</b> .................................... 10,007
 5AihS#GH@&amp;BSHh2r::ir;sX;iii;ii;;2H2r. ,;Arrsi:      <b>Public repos:</b> .......................................... 6
 5X3GhA3HS#99SHh5Xri::i;::;i:;:r5#3XMMXis:r,:iss:    <b>Stars received:</b> ....................................... 16
 25XAhhAr2hHGSSHh5Assrriii;irs2hH93.i5GGG3;: :;rX    <b>Followers:</b> ............................................. 2
 ssA555M5rs5hhMHHM3AsrrsssXXA5hHS9S,.;X52#HX .;sX    <b>Forks received:</b> ........................................ 4
 GH3AXXX3hAiX3h5AA335ArrrrsA5hMGS9#2. :;5GGG3,,;:    <b>Stars / forks:</b> public, non-fork repositories.
-223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-11-06 11:08 UTC
+223MHM2sAh3sr2h3X,:irriirs23MHG#9#HX;:AHHMhHM; .    <b>Updated:</b> ............................ 2026-11-14 00:53 UTC
 5XrsA3MMAr5hXiX535:    ,,,::;rrssrr;:2M355AhGh,:  
 </pre>
-<!-- PROFILE:DATA {"configuration": 10007, "documentation": 36708, "followers": 2, "forks": 4, "lines": 496640, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_date": null, "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_date": "2026-09-27T13:06:18Z", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_date": null, "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-10-04T14:16:43Z", "ci": "Passed", "configuration": 2128, "dependency_source": 0, "documentation": 7749, "name": "RacOS", "project_source": 52780, "release": "No release", "release_date": null, "release_url": null, "sha": "eb82712c8e959724027500cfb0d5451e43746a2c", "source": 52780, "upstream_source": 0}, {"baseline": null, "changed": null, "ci": null, "configuration": 161, "dependency_source": 0, "documentation": 71, "name": "RaCzKoViC", "project_source": 689, "release": "No release", "release_date": null, "release_url": null, "sha": null, "source": 689, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-09T20:43:10Z", "ci": "Passed", "configuration": 224, "dependency_source": 0, "documentation": 4977, "name": "The-MinerGuy", "project_source": 420, "release": "v1.35.0", "release_date": "2026-10-09T20:43:04Z", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.35.0", "sha": "3d4b7717d5ceb2888a687263515706d84e26c508", "source": 420, "upstream_source": 0}], "repos": 6, "stars": 16} -->
+<!-- PROFILE:DATA {"configuration": 10007, "documentation": 36756, "followers": 2, "forks": 4, "lines": 496734, "projects": [{"baseline": null, "changed": "2026-10-04T05:50:53Z", "ci": "No CI for this commit", "configuration": 931, "dependency_source": 0, "documentation": 13175, "name": "AgentBox", "project_source": 28076, "release": "No release", "release_date": null, "release_url": null, "sha": "0547ff709b4ece1799415bc17081626b69090202", "source": 28076, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-04T05:50:56Z", "ci": "Passed", "configuration": 3981, "dependency_source": 0, "documentation": 2140, "name": "CodeMap", "project_source": 43769, "release": "v1.6.0", "release_date": "2026-09-27T13:06:18Z", "release_url": "https://github.com/RaCzKoViC/CodeMap/releases/tag/v1.6.0", "sha": "8becd7914b693d102781933f202bd10e76b1bc73", "source": 43769, "upstream_source": 0}, {"baseline": {"branch": "dev", "commit": "9d5c0319149bfb69ce22a35f37cf17debaa5f14b", "imported_at": "2026-09-13", "repository": "https://github.com/odysseus-dev/odysseus", "version": "1.0.3"}, "changed": "2026-10-04T14:54:15Z", "ci": "Passed", "configuration": 2582, "dependency_source": 53819, "documentation": 8596, "name": "Odysseus-Lab", "project_source": 9492, "release": "No release", "release_date": null, "release_url": null, "sha": "bd683e3d80de288877a619e198fdd2c84fe249de", "source": 370906, "upstream_source": 361414}, {"baseline": null, "changed": "2026-11-14T00:53:08Z", "ci": "Running", "configuration": 2128, "dependency_source": 0, "documentation": 7797, "name": "RacOS", "project_source": 52874, "release": "No release", "release_date": null, "release_url": null, "sha": "697572642daebaa152e219e3e87f61402504f780", "source": 52874, "upstream_source": 0}, {"baseline": null, "changed": null, "ci": null, "configuration": 161, "dependency_source": 0, "documentation": 71, "name": "RaCzKoViC", "project_source": 689, "release": "No release", "release_date": null, "release_url": null, "sha": null, "source": 689, "upstream_source": 0}, {"baseline": null, "changed": "2026-10-09T20:43:10Z", "ci": "Passed", "configuration": 224, "dependency_source": 0, "documentation": 4977, "name": "The-MinerGuy", "project_source": 420, "release": "v1.35.0", "release_date": "2026-10-09T20:43:04Z", "release_url": "https://github.com/RaCzKoViC/The-MinerGuy/releases/tag/v1.35.0", "sha": "3d4b7717d5ceb2888a687263515706d84e26c508", "source": 420, "upstream_source": 0}], "repos": 6, "stars": 16} -->
 </details>
 <!-- PROFILE:END -->
 
@@ -57,7 +57,7 @@ GH3AXXX3hAiX3h5AA335ArrrrsA5hMGS9#2. :;5GGG3,,;:    <b>Stars / forks:</b> public
 
 Rust x86-64 kernel, UEFI bootloader and userland: system calls, shell, package tools, filesystems and networking. The repository includes QEMU smoke checks and an in-guest test suite.
 
-**Status:** Rust · No release yet · CI: [Passed](https://github.com/RaCzKoViC/RacOS/actions) · ★ 16 · Last change [2026-10-04](https://github.com/RaCzKoViC/RacOS/commit/eb82712c8e959724027500cfb0d5451e43746a2c)
+**Status:** Rust · No release yet · CI: [Running](https://github.com/RaCzKoViC/RacOS/actions) · ★ 16 · Last change [2026-11-14](https://github.com/RaCzKoViC/RacOS/commit/697572642daebaa152e219e3e87f61402504f780)
 
 **Topics:** `kernel` `no-std` `operating-system` `osdev` `rust` `uefi` +1 more
 
@@ -156,11 +156,11 @@ Compared per file with [imported baseline `9d5c031`](https://github.com/RaCzKoVi
 
 ### [RacOS](https://github.com/RaCzKoViC/RacOS)
 
-**CI:** [Passed](https://github.com/RaCzKoViC/RacOS/actions) · **Release:** No stable release  
-**Last change:** [2026-10-04 14:16 UTC](https://github.com/RaCzKoViC/RacOS/commit/eb82712c8e959724027500cfb0d5451e43746a2c)
+**CI:** [Running](https://github.com/RaCzKoViC/RacOS/actions) · **Release:** No stable release  
+**Last change:** [2026-11-14 00:53 UTC](https://github.com/RaCzKoViC/RacOS/commit/697572642daebaa152e219e3e87f61402504f780)
 
-- Project source: **52,780** nonblank lines
-- Documentation: **7,749** · Configuration: **2,128**
+- Project source: **52,874** nonblank lines
+- Documentation: **7,797** · Configuration: **2,128**
 - Bundled / adapted third-party source: **0**
 
 No imported upstream baseline is configured. Project source is not a verified personal-authorship count.
